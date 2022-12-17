@@ -46,28 +46,28 @@ export default function Layout({ title, description, children }) {
   });
   return (
     <>
-      <Head>
-        <title>{title ? `${title} - 12 Knots` : '12 Knots'}</title>
-        {description && <meta name="description" content={description}></meta>}
-      </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppBar position="static" sx={classes.appbar}>
-          <Toolbar sx={classes.toolbar}>
-            <NextLink href="/" passHref>
-              <Link>
-                <Typography sx={classes.brand}>12Knots</Typography>
-              </Link>
-            </NextLink>
-          </Toolbar>
-        </AppBar>
-        <Container component="main" sx={classes.main}>
-          {children}
-        </Container>
-        <Box component="footer" sx={classes.footer}>
-          <Typography>All rights reserved. 12 Knots.</Typography>
-        </Box>
-      </ThemeProvider>
-    </>
+    <div>
+    <Head>
+      <title>{title ? `${title} - 12 Knots` : '12 Knots'}</title>
+      {description && <meta name="description" content={description}></meta>}
+    </Head>
+
+      <CssBaseline />
+      <AppBar position="static" sx={classes.appbar}>
+        <Toolbar sx={classes.toolbar}>
+          <NextLink href="/" passHref>
+              <Typography sx={classes.brand}>12 Knots</Typography>
+          </NextLink>
+        </Toolbar>
+      </AppBar>
+      <Container component="main" sx={classes.main}>
+        {children}
+      </Container>
+      <Box component="footer" sx={classes.footer}>
+        <Typography>All rights reserved. 12 Knots.</Typography>
+      </Box>
+
+    </div>
+  </>
   );
 }
