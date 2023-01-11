@@ -28,6 +28,10 @@ const classes = {
       fontWeight: 'bold',
       fontSize: '1.5rem',
     },
+    button: {
+      backgroundColor: '#1D2E54',
+      color:'#FFF1DA',
+    },
   };
   
   export default classes;

@@ -2,6 +2,7 @@ import {
     Button,
     Card,
     CardActionArea,
+    Rating,
     CardActions,
     CardContent,
     CardMedia,
@@ -9,6 +10,7 @@ import {
   } from '@mui/material';
   import NextLink from 'next/link';
   import React from 'react';
+import classes from '../utils/classes';
   import { urlForThumbnail } from '../utils/image';
   
   export default function ProductItem({ product }) {
@@ -23,15 +25,13 @@ import {
             ></CardMedia>
             <CardContent>
               <Typography>{product.name}</Typography>
-              <Typography>
-                {product.rating} ({product.numReviews} reviews)
-              </Typography>
+              <Rating value={product.rating} readOnly></Rating>
             </CardContent>
           </CardActionArea>
         </NextLink>
         <CardActions>
           <Typography>${product.price}</Typography>
-          <Button size="small" color="primary">
+          <Button size="small" style={classes.button}>
             Add to cart
           </Button>
         </CardActions>
